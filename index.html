@@ -8,22 +8,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
     <link rel="stylesheet" href="style.css">
 
     <title>Badge Generator</title>
 </head>
 <body>
     <div id="wrapper" class="container">
-        <div id="card-wrapper">
-        <div id="card">
-            <img id="photo" src="">
+        <div class="row justify-content-center align-items-center" id="card-wrapper">
+            <div id="card">
+                <img id="photo" src="">
 
-            <div id="gdsc-branding">
-                <!-- <h4 id="name">Supratik Chakraborty</h4><hr> -->
-                <img id="gdsc-logo"src="assets/gdsc.png"><hr>
-                <p id="name">Name</p>
+                <div id="gdsc-branding">
+                    <!-- <h4 id="name">Supratik Chakraborty</h4><hr> -->
+                    <img id="gdsc-logo"src="assets/gdsc.png"><hr>
+                    <p id="name">Name</p>
+                </div>
             </div>
-        </div>
         </div>
         <br><br>
 
@@ -42,7 +44,6 @@
             <small id="photohelp" class="form-text text-muted">Please provide a photograph of yourself in JPEG or PNG formats.</small>
             <br><br>
             </div>
-
         </form>
     </div>
 
