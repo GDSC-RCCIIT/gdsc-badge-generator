@@ -9,17 +9,19 @@ var loadName = (event) => {
 }
 
 const btn = document.getElementById("card");
-var getCanvas;
+
 
 const downloadImg = () =>{
     var card = document.getElementById("card");
     var val = document.getElementById("name").innerHTML;
     
-    
-
-    html2canvas(card).then(function(canvas) {
+    html2canvas(card,{
+        scale:1.1,
+        
+    }).then(function(canvas) {
 		
         var link = document.createElement("a");
+        
         document.body.appendChild(link);
         link.download = `${val}.png`;
         link.href = canvas.toDataURL("image/png");
