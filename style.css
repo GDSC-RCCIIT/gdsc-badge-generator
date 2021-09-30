@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    font-family: 'Open sans', sans-serif;
+}
+
+#card-wrapper {
+    text-align: center;
+    text-align: center;
+}
+#card {
+    padding: 0px;
+    /* height: 400px; */
+    max-width: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+
+#gdsc-branding {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#photo {
+    background: linear-gradient(rgb(228, 228, 228), rgb(170, 170, 170));
+    width: 100%;
+    /* height: 320px; */
+    border-radius: 10px 10px 0px 0px;
+}
+
+#wrapper {
+    padding-top: 40px;
+}
+
+p {
+    /* font-weight: bold; */
+    color: #666D74;
+    font-size: larger;
+}
+
+#gdsc-logo {
+    width: 100%;
+    margin: 0px;
+}
+
+input {
+    margin-top: 10px;
+    padding: 10px;
+}
