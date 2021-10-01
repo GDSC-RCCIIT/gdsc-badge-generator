@@ -8,7 +8,7 @@ var loadName = (event) => {
     name.innerHTML = event.target.value;
 }
 
-const btn = document.getElementById("card");
+
 
 
 const downloadImg = () =>{
@@ -17,16 +17,14 @@ const downloadImg = () =>{
     
     html2canvas(card,{
         scale:1.1,
-        
     }).then(function(canvas) {
 		
-        var link = document.createElement("a");
-        
-        document.body.appendChild(link);
-        link.download = `${val}.png`;
-        link.href = canvas.toDataURL("image/png");
-        link.target = '_blank';
-        link.click();
+        var imgLink = document.createElement("a");
+        document.body.appendChild(imgLink);
+        imgLink.download = `${val}.png`;
+        imgLink.href = canvas.toDataURL("image/png");
+        imgLink.target = '_blank';
+        imgLink.click();
     });
 }
 
