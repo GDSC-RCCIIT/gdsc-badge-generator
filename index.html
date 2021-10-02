@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="gdsc-icon.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
@@ -16,44 +22,58 @@
 
     <title>Badge Generator</title>
 </head>
+
 <body>
     <div id="wrapper" class="container">
-        <div class="row justify-content-center align-items-center" id="card-wrapper">
-            <div id="card">
+        <div class="row justify-content-center align-items-center card-wrapper">
+            <div id="card" class="card">
                 <img id="photo" src="">
 
                 <div id="gdsc-branding">
                     <!-- <h4 id="name">Supratik Chakraborty</h4><hr> -->
-                    <img id="gdsc-logo"src="assets/gdsc.png"><hr>
+                    <img id="gdsc-logo" src="assets/gdsc.png">
+                    <hr>
                     <p id="name">Name</p>
                 </div>
             </div>
         </div>
         <br><br>
-        
-        
-        
+
+
+
         <form>
             <div class="form-group">
-            <label for="inputname">Name</label>
-            <input id="inputname" class="form-control" type="text" placeholder="Enter Name" required onchange=loadName(event)>
-            <small id="namehelp" class="form-text text-muted">Please provide your full name as it will appear on your badge.</small>
-            <br><br>
+                <label for="inputname">Name</label>
+                <input id="inputname" class="form-control" type="text" placeholder="Enter Name" required
+                    onchange=loadName(event)>
+                <small id="namehelp" class="form-text text-muted">Please provide your full name as it will appear on
+                    your badge.</small>
+                <br><br>
+                
             </div>
 
 
-            <div class="form-group">
-            <label for="inputphoto">Photo</label>
-            <input id="inputphoto" class="form-control" type="file" placeholder="Enter your photo" required onchange=loadFile(event)>
-            <small id="photohelp" class="form-text text-muted">Please provide a photograph of yourself in JPEG or PNG formats.</small>
-            <br><br>
+            <div class="form-group file-upload-div">
+                <!-- <label for="inputphoto">Photo</label> -->
+                <input id="inputphoto" class="file" type="file" title=""  required
+                    onchange=loadFile(event)>
+                <small id="photohelp" class="form-text text-muted">Please provide a photograph of yourself in JPEG or
+                    PNG formats.</small>
+                <br><br>
             </div>
         </form>
-        <div class="text-center mb-3">
-            <button class="btn btn-block btn-primary" type="submit" onclick="downloadImg()">Download Your GDSC Badge</button>
-        </div>
-    </div>
 
+    </div>
+    <div class="text-center mb-2">
+        <button class="btn btn-block btn-primary download-btn" type="submit" onclick="downloadImg()">Download GDSC Badge</button>
+    </div>
+    <div class="darkMode-toggle" onclick="darkMode()"><svg xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-moon" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+        </svg></div>
     <script src="main.js"></script>
 </body>
+
 </html>

@@ -3,19 +3,28 @@
 body {
     font-family: 'Open sans', sans-serif;
 }
+#wrapper {
+    /* padding-top: 40px; */
+    height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: auto;
+}
 
-#card-wrapper {
-    text-align: center;
+.card-wrapper {
     text-align: center;
     margin-left: 10px;
     margin-right: 10px;
 }
-#card {
+.card {
     padding: 0px;
     /* height: 400px; */
     max-width: 400px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(134, 99, 99, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-top: 1px solid rgba(153, 153, 153,.5) ;
     border-radius: 10px;
+    background: transparent;
 }
 
 #gdsc-branding {
@@ -27,14 +36,55 @@ body {
 #photo {
     background: linear-gradient(rgb(228, 228, 228), rgb(170, 170, 170));
     width: 100%;
+    max-height: 400px;
     /* height: 320px; */
     border-radius: 10px 10px 0px 0px;
 }
 
-#wrapper {
-    padding-top: 40px;
+.file-upload-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
+.file{
+    position: relative;
+    width: 120px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+.file::-webkit-file-upload-button{
+    visibility: hidden;
+}
+.file::before{
+    position: absolute;
+    content: 'Upload photo';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(245, 245, 245);
+    background: linear-gradient(rgb(132, 0, 255),rgb(110, 110, 252));
+}
+.file::after{
+    position:absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    background: rgba(159, 161, 255, 0.753);
+    height: 5px;
+    width: 100%;
+}
+.file:hover::after{
+    background: transparent;
+}
+.file:hover{
+    transform: translateY(3px);
+}
 p {
     /* font-weight: bold; */
     color: #666D74;
@@ -45,8 +95,54 @@ p {
     width: 100%;
     margin: 0px;
 }
+#name{
+    font-size:clamp(15px, 4vw,22px);
 
+}
 input {
     margin-top: 10px;
     padding: 10px;
+}
+.download-btn{
+    display: none;
+    box-shadow: 0 4px 6px rgba(105, 182, 255, 0.997);
+}
+.darkMode-toggle{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transform: scale(.6);
+    border-radius: 50%;
+    background-color: #363636;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.body-darkMode{
+    background: #252525;
+}
+
+.body-darkMode .darkMode-toggle{
+    background: #d6d6d6;
+}
+.body-darkMode .card{
+    box-shadow: 0 20px 0px 5px rgba(255, 255, 255, 0.173);
+}
+.body-darkMode #gdsc-logo{
+    filter:brightness(160%);
+}
+
+.body-darkMode label{
+    color:rgba(153, 153, 153, 0.767) ;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+@media screen and (max-width:1000px) {
+    #wrapper {
+        /* height: 80vh; */
+        padding-top: 60px;
+        display: block;
+        
+    }
 }
