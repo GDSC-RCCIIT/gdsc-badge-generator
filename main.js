@@ -14,6 +14,8 @@ const downloadImg = () =>{
     
     html2canvas(card,{
         scale:1.1,
+      backgroundColor:"rgba(0,0,0,0)" 
+      
     }).then(function(canvas) {
 		
         var imgLink = document.createElement("a");
