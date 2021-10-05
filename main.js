@@ -1,6 +1,14 @@
-var loadFile = (event) => {
-	let image = document.getElementById('photo');
-	image.src = URL.createObjectURL(event.target.files[0]);
+var loadFile = () => {
+    let inputFile = document.getElementById('inputphoto');  
+    let file = inputFile.files[0];
+    if(file.name.endsWith('.png') || file.name.endsWith('.jpg') || file.name.endsWith('.jpeg')){
+	    let image = document.getElementById('photo');
+	    image.src = URL.createObjectURL(inputFile.files[0]);
+    }
+    else{
+        alert ("Unsupported Image File");
+        inputFile.value = "";
+    }
 };
 
 var loadName = (event) => {
