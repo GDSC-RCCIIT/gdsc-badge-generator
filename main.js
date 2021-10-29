@@ -6,8 +6,18 @@ var loadFile = () => {
 	    image.src = URL.createObjectURL(inputFile.files[0]);
     }
     else{
-        alert ("Unsupported Image File");
         inputFile.value = "";
+        if(document.getElementById('imageError')!==null) {
+            return;
+        }
+        let imageInput = document.getElementById('image-input');
+        let newElement = document.createElement('small');
+        newElement.innerText = 'Unsupported File Format';
+        newElement.setAttribute("id", "imageError");
+        newElement.classList.add('form-text');
+        newElement.classList.add('text-danger');
+        imageInput.insertBefore(newElement, document.getElementById('insertBefore'));
+        imageInput.insertBefore(document.createElement('br'), newElement);
     }
 };
 
