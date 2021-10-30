@@ -77,11 +77,11 @@
             </div>
 
 
-            <div class="form-group">
+            <div class="form-group" id="image-input">
             <label for="inputphoto">Photo</label>
-            <input id="inputphoto" class="form-control" type="file" placeholder="Enter your photo" required onchange=loadFile(event)>
+            <input id="inputphoto" class="form-control" type="file" accept="image/png,.jpg,.jpeg" placeholder="Enter your photo" required onchange="loadFile()">
             <small id="photohelp" class="form-text text-muted">Please provide a photograph of yourself in JPEG or PNG formats.</small>
-            <br><br>
+            <br id="insertBefore"/><br/>
             </div>
         </form>
         <div class="text-center mb-3">

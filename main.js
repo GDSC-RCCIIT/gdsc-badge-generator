@@ -1,6 +1,31 @@
-var loadFile = (event) => {
-	let image = document.getElementById('photo');
-	image.src = URL.createObjectURL(event.target.files[0]);
+var loadFile = () => {
+    let inputFile = document.getElementById('inputphoto');  
+    let file = inputFile.files[0];
+    if(file.name.endsWith('.png') || file.name.endsWith('.jpg') || file.name.endsWith('.jpeg')){
+        let errorElement = document.getElementById('imageError')
+        if (errorElement!==null) {
+            errorElement.remove();
+            document.getElementById('tem-br').remove();
+        }
+	    let image = document.getElementById('photo');
+	    image.src = URL.createObjectURL(inputFile.files[0]);
+    }
+    else{
+        inputFile.value = "";
+        if(document.getElementById('imageError')!==null) {
+            return;
+        }
+        let imageInput = document.getElementById('image-input');
+        let newElement = document.createElement('small');
+        newElement.innerText = 'Unsupported File Format';
+        newElement.setAttribute("id", "imageError");
+        newElement.classList.add('form-text');
+        newElement.classList.add('text-danger');
+        imageInput.insertBefore(newElement, document.getElementById('insertBefore'));
+        let brTag = document.createElement('br');
+        brTag.setAttribute('id', 'tem-br');
+        imageInput.insertBefore(brTag, newElement);
+    }
 };
 
 var loadName = (event) => {
