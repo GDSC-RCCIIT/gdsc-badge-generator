@@ -2,6 +2,11 @@ var loadFile = () => {
     let inputFile = document.getElementById('inputphoto');  
     let file = inputFile.files[0];
     if(file.name.endsWith('.png') || file.name.endsWith('.jpg') || file.name.endsWith('.jpeg')){
+        let errorElement = document.getElementById('imageError')
+        if (errorElement!==null) {
+            errorElement.remove();
+            document.getElementById('tem-br').remove();
+        }
 	    let image = document.getElementById('photo');
 	    image.src = URL.createObjectURL(inputFile.files[0]);
     }
@@ -17,7 +22,9 @@ var loadFile = () => {
         newElement.classList.add('form-text');
         newElement.classList.add('text-danger');
         imageInput.insertBefore(newElement, document.getElementById('insertBefore'));
-        imageInput.insertBefore(document.createElement('br'), newElement);
+        let brTag = document.createElement('br');
+        brTag.setAttribute('id', 'tem-br');
+        imageInput.insertBefore(brTag, newElement);
     }
 };
 
